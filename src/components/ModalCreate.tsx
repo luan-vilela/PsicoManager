@@ -24,19 +24,19 @@ export const ModalCreate: React.FC<CreateProps> = ({
     if (!title || !body) return;
 
     if (existTitle()) {
-      return alert("Título já existe!");
+      return alert(`Título ${title.trim()} já existe!`);
     }
 
     const p = {
       userId: 1,
-      title: title,
+      title: title.trim(),
       body: body,
     };
     savePost(p);
   };
 
   const existTitle = () => {
-    return posts.find((item) => item.title === title);
+    return posts.find((item) => item.title === title.trim());
   };
 
   return (

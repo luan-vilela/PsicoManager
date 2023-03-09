@@ -21,7 +21,7 @@ export const ModalMensage: React.FC<CreateProps> = ({
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Excluir esse post?</Modal.Title>
+          <Modal.Title>Excluir post?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <h1 className="text-danger text-center"> Atenção!</h1>
@@ -30,11 +30,11 @@ export const ModalMensage: React.FC<CreateProps> = ({
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="light" onClick={responseModal(true)}>
-            Sim
+          <Button variant="btn btn-light" onClick={() => responseModal(true)}>
+            Excluir
           </Button>
-          <Button variant="primary" onClick={responseModal(false)}>
-            Não
+          <Button variant="btn btn-outline-primary" onClick={handleClose}>
+            Cancelar
           </Button>
         </Modal.Footer>
       </Modal>

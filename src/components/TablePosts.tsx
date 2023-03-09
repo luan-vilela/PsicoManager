@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 import Post from "../interface/Post";
 
 interface PostProps {
@@ -15,20 +16,22 @@ export const TablePosts: React.FC<PostProps> = ({
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>Título</th>
-          <th>Post</th>
-          <th>Opções</th>
+          <th scope="col">#</th>
+          <th scope="col">Título</th>
+          <th scope="col">Post</th>
+          <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
         {posts.map((post, index) => (
           <tr key={index}>
-            <td onClick={() => handleOpen(post)}>{post.id}</td>
+            <td scope="row" onClick={() => handleOpen(post)}>{post.id}</td>
             <td onClick={() => handleOpen(post)}>{post.title}</td>
             <td onClick={() => handleOpen(post)}>{post.body}</td>
-            <td onClick={() => handleDelete(post)} className="flex align-self-center">
-              <i className="bi bi-trash"></i>
+            <td className="flex align-self-center">
+              <Button variant="danger" onClick={() => handleDelete(post)}>
+                <i className="bi bi-trash"></i> Excluir
+              </Button>
             </td>
           </tr>
         ))}
