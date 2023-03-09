@@ -99,6 +99,7 @@ function App() {
     if (!e) return;
 
     if (post) {
+      removePost()
     }
   };
 
